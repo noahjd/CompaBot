@@ -28,12 +28,14 @@ async def on_message(message):
         await message.channel.send('Eres frio guey?!')
     elif message.content.lower() == 'it is certain':
         await message.channel.send('es cierto guey!')
+    elif message.content.lower() == 'marco':
+        await message.channel.send('polo!')
 
     await bot.process_commands(message)
 
 
 @bot.command(pass_context=True)
-async def reply(ctx, *args):
+async def say(ctx, *args):
     user_args = ' '.join(args)
 
     await ctx.channel.send(user_args)
